@@ -22,12 +22,16 @@ class CocktailsController < ApplicationController
   def destroy
     @cocktail = Cocktail.find(params[:id])
     @cocktail.delete
-    redirect_to cocktails_path
+    redirect_to @cocktail
   end
 
   private
 
     def strong_params
       params.require(:cocktail).permit(:name)
+    end
+
+     def set_cocktail
+      @cocktail = Cocktail.find(params[:cocktail_id])
     end
 end
