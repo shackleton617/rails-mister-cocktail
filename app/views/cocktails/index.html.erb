@@ -1,15 +1,30 @@
-<h1>Cocktails#index</h1>
-<p>Find me in app/views/cocktails/index.html.erb</p>
+<h1>Hello, Mister Cocktail...</h1>
 
-<% @cocktails.each do |cocktail| %>
-<h2><%= link_to cocktail.name, cocktail_path(cocktail[:id]) %></h2>
-<h3><%= link_to "delete", cocktail_path(cocktail[:id]), method: :delete,
-      data: { confirm: "Are you sure?" } %>
-</h3>
-<% end %>
+<div class="center">
+  <%= link_to new_cocktail_path do %>
+    <button type="button" class="navbar-btn" id="gray">Add new cocktail</button>
+  <% end %>
+</div>
 
-<h2><%= link_to "New cocktail", new_cocktail_path %></h2>
+ <div class="flex-container">
+    <% @cocktails.each do |cocktail| %>
+        <%= link_to cocktail_path(cocktail[:id]) do %>
+          <div class="card">
+            <div class="title-drink"><%= cocktail.name %></div>
+          </div>
+        <% end %>
+    <% end %>
+ </div>
 
+
+
+
+
+
+<!-- fixed card layout issue by removing:
+""
+
+ now am attempting to add the cocktail name back in the card as an absolute-positioned item.  -->
 
 
 
