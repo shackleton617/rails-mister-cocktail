@@ -23,6 +23,8 @@ gem 'webpacker'
 
 gem 'figaro'
 
+gem 'cloudinary'
+
 #front end
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass' # Bootstrap v3
